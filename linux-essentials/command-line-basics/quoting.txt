@@ -1,0 +1,18 @@
+Quoting
+-------
+- Single vs. Double
+    - austburn ~  echo "Username is $USER"
+        Username is austburn
+        austburn ~  echo 'Username is $USER'
+        Username is $USER
+- Backslash
+    - Can remove special meaning
+        austburn ~  echo "It costs $5"
+        It costs 
+        austburn ~  echo "It costs \$5"
+        It costs $5
+      - Can be used as an escape character
+- Backtick
+    - Used for command substitution
+    - austburn ~  echo "There are `wc -w < globbing.txt` words in globbing.txt"
+    There are 27 words in globbing.txt

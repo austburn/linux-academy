@@ -1,0 +1,6 @@
+Globbing
+--------
+- ls [a-z]*.txt
+  a.txt  logtemp.txt
+- can use this globbing for removing files as well
+

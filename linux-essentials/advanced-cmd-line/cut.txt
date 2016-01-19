@@ -1,0 +1,3 @@
+Welcome to file 2!
+How we are on file 2 line 2.
+wait for it... yep we are now on file 2 line 3.

@@ -1,0 +1,33 @@
+path
+----
+- Linux searches for the file to run the command via the $PATH variable
+    - Does not actually search in the current directory
+
+Basic Commands
+--------------
+- halt - shutdown the Linux OS
+- reboot - shutdown and restart the Linux OS
+- init
+    - init 0 - halt
+    - init 6 - reboot
+- poweroff - shutdown the system
+    - can perform halt, reboot, and a shutdown
+- exit terminates the current running processes and the terminal session
+- su 
+    - substitute user/super user
+    - su - - become root
+    - su <user> - become user
+- env - all environment variables that can be accessed by the current user
+- top - running processes
+- which - give the full path of an application
+- whoami - currently logged in user
+- netstat - network status, routing tables, etc.
+- route - view the routing table and flags
+- ifconfig - network configurations on the cards
+- ip addr - improved(?) ifconfig
+- uname
+    - gives you the OS
+    - uname -s - default
+    - uname -n - hostname
+    - uname -r - Linux kernel release
+    - uname -v - Linux kernel version number

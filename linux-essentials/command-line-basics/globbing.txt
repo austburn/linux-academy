@@ -1,0 +1,6 @@
+Globbing
+--------
+- ? - is a single character wildcard
+	- ls a?.txt: ab.txt ad.txt
+- ls [abc]*.txt: ab.txt ba.txt cop.txt
+- ls [a-c]*.txt: ab.txt ba.txt cop.txt

@@ -1,0 +1,68 @@
+Archiving
+---------
+- tar
+  - does not compress files
+  - packages file into one file
+  - Tape ARchive
+
+compression
+-----------
+- gzip/gunzip
+  - only does compression, not archiving
+- bzip2/bunzip
+  - more efficient than gzip
+- zip/unzip
+  - more universal (OSX/Windows)
+  - does archiving and compression
+  - not typically installed by default
+
+~/projects/linux-academy zip -r le.zip linux-essentials 
+  adding: linux-essentials/ (stored 0%)
+  adding: linux-essentials/filesystem/ (stored 0%)
+  adding: linux-essentials/filesystem/linux-fs.txt (deflated 54%)
+  adding: linux-essentials/filesystem/globbing.txt (deflated 20%)
+  adding: linux-essentials/filesystem/.archiving.txt.swp (deflated 96%)
+  adding: linux-essentials/filesystem/archiving.txt (deflated 25%)
+  adding: linux-essentials/filesystem/quoting.txt (deflated 53%)
+  adding: linux-essentials/major-open-source-applications/ (stored 0%)
+  adding: linux-essentials/major-open-source-applications/package-mgmt.txt (deflated 59%)
+  adding: linux-essentials/command-line-basics/ (stored 0%)
+  adding: linux-essentials/command-line-basics/globbing.txt (deflated 42%)
+  adding: linux-essentials/command-line-basics/info.txt (deflated 33%)
+  adding: linux-essentials/command-line-basics/env-vars.txt (deflated 44%)
+  adding: linux-essentials/command-line-basics/path-basic-commands.txt (deflated 51%)
+  adding: linux-essentials/command-line-basics/quoting.txt (deflated 53%)
+  adding: linux-essentials/command-line-basics/alt-help.txt (deflated 41%)
+~/projects/linux-academy ls -al
+total 28
+drwxr-xr-x 3 austburn users 4096 Jan 13 07:54 .
+drwxr-xr-x 4 austburn users 4096 Dec 28 15:00 ..
+-rw-r--r-- 1 austburn users 7661 Jan 13 07:52 le.zip
+drwxr-xr-x 5 austburn users 4096 Jan  5 08:09 linux-essentials
+
+
+~/projects/linux-academy tar -czf le.tar.gz linux-essentials
+~/projects/linux-academy ls -al
+total 28
+drwxr-xr-x 3 austburn users 4096 Jan 13 07:54 .
+drwxr-xr-x 4 austburn users 4096 Dec 28 15:00 ..
+-rw-r--r-- 1 austburn users 4632 Jan 13 07:54 le.tar.gz
+-rw-r--r-- 1 austburn users 7661 Jan 13 07:52 le.zip
+drwxr-xr-x 5 austburn users 4096 Jan  5 08:09 linux-essentials
+
+
+~/projects/linux-academy tar -cjf le.tar.bz2 linux-essentials
+~/projects/linux-academy ls -al
+total 36
+drwxr-xr-x 3 austburn users 4096 Jan 13 07:56 .
+drwxr-xr-x 4 austburn users 4096 Dec 28 15:00 ..
+-rw-r--r-- 1 austburn users 4604 Jan 13 07:56 le.tar.bz2
+-rw-r--r-- 1 austburn users 4632 Jan 13 07:54 le.tar.gz
+-rw-r--r-- 1 austburn users 7661 Jan 13 07:52 le.zip
+drwxr-xr-x 5 austburn users 4096 Jan  5 08:09 linux-essentials
+
+
+Listing Contents
+----------------
+unzip -l file
+tar --list -f file

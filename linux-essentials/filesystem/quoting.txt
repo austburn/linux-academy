@@ -1,0 +1,32 @@
+Quoting
+-------
+$ echo $PATH
+/usr/bin
+
+$ echo "Path is $PATH"
+Path is /usr/bin
+
+$ echo 'I want to print $PATH"
+I want to print $PATH
+
+$ echo "Today is $(date)"
+Today is Mon 12...
+
+$ echo "Path is \$PATH"
+Path is $PATH
+
+$ echo "Path is \"$PATH\""
+Path is "/usr/bin"
+
+~ echo "a\ta" # horizontal tab
+a	a
+
+~ echo "a\va" # vertical tab
+a
+ a
+
+~ echo "\x68\x69" # print char with hex value
+hi
+
+~ echo "\\$PATH" #escape backslash
+\/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl

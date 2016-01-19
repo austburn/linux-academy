@@ -1,0 +1,12 @@
+Command Line Pipes
+------------------
+- stdin (0), stdout (1), stderr (2)
+stdin ---> command ---> stdout
+			  |
+			  v
+			stderr
+- the pipe (|) allows you to send the stdout of one command to the stdin of a consequent command
+	- cat file.txt | grep a
+	- cut file.txt -d" " -f3 | cut -c2 # get the third field, delimited by spaces, piped to get the second column (or char)
+	- wc -w file.txt | cut -d" " -f1 # get just the word count int
+	

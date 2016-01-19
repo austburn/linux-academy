@@ -1,0 +1,16 @@
+Regular Expressions
+-------------------
+* matches any number of characters
+. any single char
+? matches 0 or 1 of proceeding char
+^ match at beginning
+$ match at end
+[nnn] match any characters
+[^nnn] do not match these characters
+
+- grep c$ abc.txt # find lines with c at the end
+- grep ^ab abc.txt # find lines that start with abb
+- grep .cc abc.txt # find lines that have two c's in them
+- grep ^.b abc.txt # find lines that have a b as the second char
+- grep ^...$ # find lines that are three chars long
+- grep -e "^[^bc]" abc.txt # find lines that don't start with b or c

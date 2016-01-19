@@ -1,0 +1,24 @@
+Environment Variables
+---------------------
+- pwd uses the $HOME variable in conjunction with ~
+- Common variables
+    - BASH/SHELL - /bin/sh
+    - CPU - spec
+    - DISPLAY - local video card monitor
+    - ENV
+    - EUID - UID of the current user
+    - HISTFILE
+    - HOST/HOSTNAME
+    - LOGNAME - username of current user
+    - MAIL - mailbox file
+    - MANPATH - man program
+    - OLDPWD - previous directory
+    - OSTYPE
+    - PATH
+    - PSI - shell prompt (depends on distribution)
+    - PWD
+    - USER/USERNAME
+- variable=value - sets an environment variable 'variable' to value in the current shell
+- PATH=$PATH:/new/path/to/add
+- export variable=value - sets an env var; will be accessible in future shells
+    - add to your shell profile

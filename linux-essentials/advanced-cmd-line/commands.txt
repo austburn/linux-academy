@@ -1,0 +1,55 @@
+Commands
+--------
+~ sort sort.txt
+Always learning.
+Everyone is welcome.
+It is fun to learn new things!
+Welcome to Linux Academy.
+
+~/projects/linux-academy/linux-essentials/advanced-cmds sort -r sort.txt
+Welcome to Linux Academy.
+It is fun to learn new things!
+Everyone is welcome.
+Always learning.
+
+~/projects/linux-academy/linux-essentials/advanced-cmds sort numbers.txt 
+1
+12
+3
+4
+43
+5
+6
+7
+9
+
+
+~/projects/linux-academy/linux-essentials/advanced-cmds cut -c2-4 cut.txt 
+elc
+ow 
+ait
+
+~/projects/linux-academy/linux-essentials/advanced-cmds cut -c2,4 cut.txt
+ec
+o 
+at
+
+~/projects/linux-academy/linux-essentials/advanced-cmds cut --delimiter=" " -f2 cut.txt 
+to
+we
+for
+
+~/projects/linux-academy/linux-essentials/advanced-cmds cut --delimiter="," -f2 cut.csv 
+col2
+4
+2
+
+~/projects/linux-academy/linux-essentials/advanced-cmds cut --delimiter="," -f1-3 cut.csv
+col1,col2,col3
+1,4,5
+3,2,7
+
+~/projects/linux-academy/linux-essentials/advanced-cmds cut --delimiter="," -f2- cut.csv 
+col2,col3
+4,5
+2,7

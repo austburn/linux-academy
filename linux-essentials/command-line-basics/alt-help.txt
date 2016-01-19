@@ -1,0 +1,15 @@
+Other Ways To Get Help
+----------------------
+- README files
+  	- usually found in:
+	    - /usr/doc/<pkg>
+	    - /usr/share/doc/<pkg>
+	    - /usr/share/doc/packages/<pkg>
+	- txt/PostScript/PDF/HTML
+	- find /usr/share/doc -name "*passwd*"
+	- locate passwd
+	- whereis passwd
+    	- looks in a small subset of likely locations
+- .1-.9: man, info, less
+- .odt - LibreOffice, word processor application
+- .pdf - xpdf

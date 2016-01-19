@@ -1,0 +1,6 @@
+info
+----
+- used to address problems that man did not
+- has hyperlinks to other pages
+- can be used to access man pages as well
+- not widely used, man is still very much the standard

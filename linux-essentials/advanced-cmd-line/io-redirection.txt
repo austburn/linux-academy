@@ -1,0 +1,14 @@
+I/O Redirection
+---------------
+- > redirect stdout
+	- tail /var/log/messages > logtemp.txt
+	- same as tail /var/log/messages 1> logtemp.txt
+	- redirect stderr: cat invalidfile.txt 2> err.txt
+	* overwrites file
+- >> redirect and append stdout
+	- ps >> running_processes.txt
+- redirecting both stdout and stderr for a single command
+	- command 1> stdout.txt 2> stderr.txt
+- < redirect stdin
+	- tail < /var/log/messages
+	- sort < file.txt

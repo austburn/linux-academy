@@ -1,0 +1,56 @@
+Linux Filesystem
+----------------
+- / root directory
+  - /bin/ - executable files
+  - /boot/ - files needed to boot
+  - /dev/ - devices
+  - /etc/ - text based config files and services used by the system
+    - /etc/aliases     Contains a table used to redirect all to local users
+    - /etc/exports     Configured file systems to be exported to remove NFS clients
+    - /etc/fstab       Lists the partitions and filesystems that will be automatically mounted on boot
+    - /etc/ftpusers    Controls access to FTP service
+    - /etc/group       Local group definitions
+    - /etc/grub.conf   Congiguration parameters for the init process
+    - /etc/hosts       Hostname to IP addr mappings
+    - /etc/inittab     See grub.conf
+    - /etc/init.d      Startup scripts and services
+    - /etc/rc/init.d   Redhat ^
+    - /etc/passwd      Users accounts files
+    - /etc/shadow      Encrypted passwords
+    - /etc/resolv.conf Specify DNS server and domain suffix our system will use
+    - /etc/X11         X windows config files
+  - /home - contains individual workspaces for users
+  - /lib - libraries used by /bin /sbin
+  - /media - used to mount by some distros
+  - /mnt   - ^
+  - /opt - used by certain manually installed programs
+  - /proc - dynamically created when you go to access it; process id number
+  - /root - root users /home directory
+  - /sbin - system mgmt and administration tools
+  - /srv - services running on our system can store files here
+  - /sys - system information
+  - /usr - application files
+  - /var - linux variable data and logs
+- hierarchical structure
+
+Linux Disk Filesystems
+----------------------
+- ext2 - pretty standard Linux filesystem
+  - max file size: 2TB
+  - max volume: 4TB
+  - 256 char file names
+  - most widely used/fastest
+- ext3
+  - very similar to ext2
+  - contains journaling
+    - does not have to check the entire filesystem if it does not go down cleanly
+    - records transactions and whether they completed
+    - can just replay the journal log on startup
+- Reiser
+  - utilizes journaling
+  - faster than ext2/3
+  - allows for larger volumes and larger file size
+- ext4
+  - came out most recently
+  - files can be 16TB; max volume: 1XB
+  - uses checksums in conjunction with journal for better reliability

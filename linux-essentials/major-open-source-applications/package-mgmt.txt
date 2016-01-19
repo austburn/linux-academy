@@ -1,0 +1,44 @@
+Ubuntu APT
+----------
+- List of repos in /etc/apt/sources.list
+- Packages have the program, version information, and a list of needed deps
+- Removing packages
+	- apt-get remove <package>         # uninstall
+	- apt-get remove --purge <package> # remove package and all configuration
+	- apt-get autoremove <package>     # remove package and all deps of that package
+- apt-get upgrade      # check for package updates
+- apt-get dist-upgrade # check for kernel updates
+
+dpkg
+----
+- Used to manage .deb files
+- dpkg -i <.deb> # install
+	- does not handle dependency mgmt; install will err out
+	- will flag the system with deps that you need; apt-get -f upgrade # will resolve deps; continue installing .deb
+- dpkg --get-selections # installed packages
+- dpkg --remove <package> # remove all binaries
+- dpkg --purge <package>  # remove all config
+
+Debian YUM
+----------
+- yum remove <package>
+- /etc/yum.repos.d # .repo files
+- yum update # apt-get update basically
+- yum search <package>
+- yum install <package>
+- yum check-update <package>	# check for update of particular package
+- yum upgrade      				# check for upgrades for all packages
+- yum deplist <package>			# look at the deps of a package
+- yum clean packages 			# clean up package install files
+- yum clean all
+* apache2 is httpd in debian based systems
+
+rpm
+---
+- rpm -i <.rpm>
+	-h # progress
+	-v # verbose
+- rpm -q <package> # query for an application, look for the installed rpm
+	-i # more information about the package; install date, summary, size, etc.
+- rpm -e <package> # uninstall package
+- rpm -qR <package> # remove the deps of the package
