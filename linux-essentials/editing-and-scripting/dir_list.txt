@@ -1,0 +1,5 @@
+bash-scripting.txt
+dir_list.txt
+findlist.sh
+for.sh
+text-editors.txt

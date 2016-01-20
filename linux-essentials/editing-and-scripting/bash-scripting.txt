@@ -1,0 +1,39 @@
+Bash Scripting
+--------------
+- $VARIABLE
+- Arguments
+    - $1 - first argument
+    - $2 - second argument
+    - $? - exit code of previous command
+- Conditionals
+    - if condition then
+        command
+      else
+        command
+      fi
+    - Options
+        -d directory exists?
+        -e file exists?
+        -f file exists and it is a regular file?
+        -G file exists and is owned by group
+        -h or -l file exists and is sybolic
+        -O file exists and owned by user id
+        -r file exists and has read permissions
+        -w "" write ""
+        -x "" execute ""
+- Loops
+    - while condition # is true
+      do
+        command
+      done
+    - until condition # is true
+      do
+        command
+      done
+    - for
+        - seq to create a sequence of numbers
+      for i in `seq 15`
+        do
+            command
+        done
+      exit 0

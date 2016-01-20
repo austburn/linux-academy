@@ -1,0 +1,6 @@
+Text Editors
+------------
+- vim
+    - :w <filename> - save to filename
+    - dw - delete word
+    - dd/p - delete line/paste it somewhere
