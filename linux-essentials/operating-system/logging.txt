@@ -1,0 +1,17 @@
+Logging
+-------
+- Background/daemon processes typicall log information for debug information
+- /var/log
+    - messages - pretty general purpose
+    - secure - where the damn sudo logs are stored "I will report you!"
+- log rotation
+    - du le.tar.bz2 -h | awk '{print $1}' # check file size, cut doesn't allow delims with multiple spaces
+- most programs rely on the syslog daemon
+    - started during the boot process
+    - klogd sometimes intercepts kernel logs
+    - config can be in: /etc/sys*, /etc/rsyslog.conf
+- dmesg can be used to examine the kernel ring buffer
+    - stored in memory
+    - kernel messages
+    - dynamic in nature
+    - pipe to less to parse

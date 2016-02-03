@@ -1,0 +1,10 @@
+Kernel
+------
+- Linux Kernel is a Unix-like OS
+- Core piece of any Linux install
+- Responsible for managing every other piece of software running
+    - Memory allocation
+    - Hard disk access
+    - Etc.
+- Pretty much the first thing that comes up on boot
+- To keep track of everything, it uses a hierachy of processes

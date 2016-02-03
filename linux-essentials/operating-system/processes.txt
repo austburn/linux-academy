@@ -1,0 +1,16 @@
+Processes
+---------
+- Parents and children (PPID)
+    - can see this relationship via `ps -u austin --forest`
+    - ps a - ignore the user requirement, show all processes
+    - ps x - ignore the tty restriction
+    - ps U <username>
+    - ps u - user oriented information output
+- can see memory available with `free -mh` (megabytes/human readable)
+- top
+    - use `h` to get help
+- load average
+    - correlates to cores available
+    - 0 means there are no programs demanding CPU time
+    - If you have 1 CPU and a load average of 1, the CPU is at capacity
+    - the 3 numbers are 1, 5, and 15 minute load average

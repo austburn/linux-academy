@@ -1,0 +1,6 @@
+File Locations
+--------------
+- /lib - library files used by binaries in /bin and /usr/bin
+- /usr/lib - ^
+- /etc - configuration
+- /var/log - logfiles

@@ -1,0 +1,101 @@
+Networking Basics
+-----------------
+- TCP/IP Protocol
+    - Really just an agreement on how to converse
+- OSI Reference Model (1983)
+    - Modular network communication structure standard
+    - 7 layers: application, presentation, session, transport, network, datalink, physical
+        - go down the stack, accross the wire, back up the stack
+        - Physical: electrical signals between two hosts
+        - Datalink:
+            - Rules and procedures for accessing the physical layer
+            - defines how hosts are identified on the network and how those mediums are accessed
+            - defines how to verify data received from physical layer
+        - Network:
+            - Enables the routing of data
+            - Determine the next destination of a packet
+            - IP/ICMP protocols apply here
+        - Transport:
+            - Divides data into transmittable chunks - packets
+            - Also reassebmles these packets
+            - Ensures packets arrive in tact
+            - TCP/UDP protocols apply here
+        - Session:
+            - Establish and maintain a session between hosts
+        - Presentation:
+            - Ensures the information is formatted correctly
+        - Application:
+            - Responsible for providing access to the underlying protocols
+    - From A --> B
+        - A breaks data down to fragments
+        - fragments transferred via packets
+        - B resequences and defragments data
+- TCP/IP
+    - connection-based transport protocol
+    - ensures data exchanged reliably between two hosts
+    - Web servers, email servers, FTP servers, etc. utilize this
+    - Requires network/processing overhead - affects latency
+- UDP
+    - connectionless transport protocol
+    - Packets are sent unacknowledged --> Less reliability
+    - Streaming audio, VoIP, etc. utilize this
+- ICMP
+    - verify network communication between hosts
+    - ping
+- Ports
+    - provided by TCP and UDP at the transport layer
+    - logical connection between TCP/UDP and upper layer protocols
+    - Popular ports:
+        - FTP: 20, 21
+        - Telnet: 23
+        - SMTP: 25
+        - HTTP: 80
+        - POP3: 110
+        - NetBIOS: 137, 138, 139
+        - HTTPS: 443
+    - Registered ports: 1024 - 49151
+    - Dynamic (private) ports: 49152 - 65535
+- IP Address is a Layer 3 network address; required by every host on an IP-based network
+- MAC Address is hard coded on the network board; Layer 2 address
+- IPV4 is a 32 bit scheme
+    - 192.168.1.1: 11000000.10101000.00000001.00000001
+- IPV6 is a 128 bit scheme - four character hexadecimal numbers separated by colons
+    - FE80:0000:0000:0000:0202:B3FF:FE1E:8329
+- Network Address Translation: NAT
+    - Exposes a single public IP
+    - Maps to several private IPs on the backend via LAN
+    - basically a router
+- Private IP ranges
+    - Class A: 10.0.0.0 - 10.255.255.255
+    - Class B: 172.16.0.0 - 172.31.255.255
+    - Class C: 192.168.0.0 - 192.168.255.255
+    - Non-addressable IP addresses
+- Subnet mask
+    - IP addresses are divided into two pieces
+        - Network: all nodes can share
+        - Node: must be unique to each node
+    - Each non-zero octet classifies the network portion of the IP
+    - Class A
+        - first octet must be between 1 and 126
+            - network address
+        - last 3 octets are the node address
+        - default subnet mask: 255.0.0.0
+        - 126 possible network addresses
+        - 16.7 million possible node addresses (per network)
+    - Class B
+        - first octet is between 128 and 192
+        - first 2 octets are the network address
+        - default subnet mask: 255.255.0.0
+        - 16834 possible networks
+        - 65534 possible node addresses
+    - Class C
+        - first octet must be between 192 and 223
+        - first 3 octets are network address
+        - last octet is node address
+        - default subnet mask: 255.255.255.0
+        - 2 million possible networks
+        - 254 possible node addresses
+    - shorthand aka CIDR
+        - 192.168.1.1/24 - indicates that 24 bits used for the subnet mask (Class C)
+        - a slash 24 (/24) can have 254 nodes
+    - you do not have to use the default subnet masks: 255.255.252.0 for example

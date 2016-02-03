@@ -1,0 +1,57 @@
+Network Configuration
+---------------------
+- ping:                 test connectivity
+- dig:                  lookup ip addresses for DNS names
+- netstat:              list network connections, routing info, NIC info
+- route:                current route/net settings
+    - shows you where your default requests are routed through
+    - can add routes to the routing table
+- traceroute:           traces the route a packet takes
+- ifconfig:             current network settings
+- ip addr:              current ip address and settings
+- /etc/resolve.conf:    this is where our DNS info is stored
+
+Creating a Static IP
+--------------------
+- Use "static" as opposed to the DHCP protocol
+    - Dynamic Host Configuration Protocol: Used on Internet Protocol networks for dynamically distributing network configuration parameters (IP addresses, etc.)
+- Set you IP address     - Can use the CIDR notation
+- Set your subnet mask   - ^
+- Set the network address segment
+- For example:
+DEVICE="eth0"
+BOOTPROTO="static"
+IPADDR="10.10.30.210"
+NETMASK="255.255.255.0"
+NETWORK="10.10.30.0"
+
+Routing Table
+-------------
+- route shows our routing table
+    - Destination - ipaddress or dns name (always use ip address)
+    - Gateway     - gateway through which our host/network can be accessed (router)
+    - Genmask     - Netmask of our destination network
+    - Iface/Type  - destination network interface; can be blank (all); type: unicast, broadcast, multicast, etc. (outside scope)
+- route add -net <network_address> netmask <subnet_mask> gw <router_address>
+    - route add -net 10.10.40.0 netmask 255.255.255.0 gw 10.10.30.1
+- route del -net "" "" "" "" ""
+- route add default gw 10.10.30.1 (default gateway/router for our machine)
+
+Troubleshooting
+---------------
+- netstat
+    -a listening and non-listening sockets
+    -i stats of network interfaces (received/transferred/dropped)
+    -l listening sockets
+    -s summary of each protocol
+    -r routing table
+- traceroute
+    - traces the path of a packet through routers using the icmp protocol from ping
+
+    austin ~/projects/linux-academy > traceroute www.google.com
+    traceroute to www.google.com (173.194.207.147), 30 hops max, 60 byte packets
+     1  10.4.20.2 (10.4.20.2)  0.788 ms  0.783 ms  0.772 ms
+     2  * * *
+     3  * * *
+     4  * * *
+     5  * * *
