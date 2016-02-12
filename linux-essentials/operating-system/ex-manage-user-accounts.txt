@@ -1,0 +1,30 @@
+Step 1:  Log in to your Linux Essentials lab server and become the root user.
+
+
+Step 2:  We are going to create a new user.  The users's full name is Mary Phillips.  The username should be called mphillips.  The default shell should be the bourne again shell.  After creating the user then set the password; The password should be LinuxPassword
+
+su -
+useradd -c "Mary Phillips" -s "/bin/bash" mphillips
+passwd mphillips
+
+
+Step 3:  There is a specific file on the linux file system in which we can look at to verify that our new username was created how would we view this?
+
+
+[root@austburn1 ~]# tail -n 1 /etc/passwd
+mphillips:x:1002:1002:Mary Phillips:/home/mphillips:/bin/bash
+
+
+Step 4:  Create a user account called richard with all defaults without specifying any specs.
+
+
+useradd richard
+
+
+Step 5:  Give the new user account richard a password LinuxPassword and a full name of Richard Layton
+
+
+passwd richard
+[root@austburn1 ~]# usermod -c "Richard Layton" richard
+[root@austburn1 ~]# tail -n 1 /etc/passwd
+richard:x:1003:1003:Richard Layton:/home/richard:/bin/bash

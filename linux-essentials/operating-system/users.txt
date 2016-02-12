@@ -1,0 +1,107 @@
+Users
+-----
+- /home contains directories for each user
+- /root is the root users home directory
+- finger
+    - gives you more information about a user
+- id
+    - gives you the uid/gid/groups for a user
+        austin ~/projects/astra-infrastructure/terraform/cicd > id root
+        uid=0(root) gid=0(root) groups=0(root)
+    - uids are unique
+- /etc/passwd - where the users are stored
+    - system users
+    - username:password_field:uid:gid:full_name:home_dir:default_shell
+    - password is a legacy field - always x
+    - austin:x:1000:1000:Austin Burnett,,,:/home/austin:/bin/bash
+- /etc/shadow - encrypted passwords
+    - similar structure to passwd
+    - username:encrypted_pass:days_since_changed:next_change_date:days_warning_field(prior to expiration):disabled_days_field(after expiration, disable):
+- pwck - does some checking around /etc/passwd and /etc/shadow
+- /etc/group  - group information
+- root
+    - prevent accidental damage
+    - su -
+        - default is root
+        - su - user
+            - logs in as user
+            - can affect $PATH
+    - # indicates that you are the root user
+    - sudo is like su, but on a command basis
+- w
+    - shows you uptime and who is logged in
+- who
+    - who -b: last boot time
+    - who -m: hostaname and associated user
+    - who -r: current run level for user
+    - who -q: number of users logged in
+    - who -a: shows all information
+- last user
+    - last command that user performed and whether they're logged in
+    - shows the ip address they logged in from
+
+
+System Users
+------------
+- some users are utilized by services on the machine as opposed to being an account you'd log in to
+- these users tend to have lower UIDs (< 1000)
+
+
+User IDs
+--------
+- the linux filesystem doesn't respect the username, it relies on UIDs
+- multiple users can have the same UID - but they will have all the same file permissions, etc
+- id <username> will give you uid, gid, groups
+    austin ~/projects/linux-academy > id
+    uid=1000(austin) gid=1000(austin) groups=1000(austin)
+
+    austin ~/projects/linux-academy > id root
+    uid=0(root) gid=0(root) groups=0(root)
+
+- groups <username> - what groups is this user a member of
+- last - who logged in last, from where, are they still logged in?
+
+
+User Management
+---------------
+- useradd johndoe
+    - default config: /etc/default/useradd OR useradd -D
+        - SHELL=/bin/sh (Ubuntu 14.04 LTS)
+        - GROUP
+        - HOME
+        - INACTIVE
+        - EXPIRE
+        - SKEL
+        - CREATE_MAIL_SPOOL
+
+        austin ~/projects/linux-academy > useradd  -D
+        GROUP=100
+        HOME=/home
+        INACTIVE=-1
+        EXPIRE=
+        SHELL=/bin/sh
+        SKEL=/etc/skel
+        CREATE_MAIL_SPOOL=no
+    - /etc/default/login.defs
+        - contains default values for /etc/shadow (password settings)
+        - contains UID_MIN/MAX and SYS_UID_MIN/MAX
+    - /etc/skel
+        - a "skeleton" for a new home directory for a user
+
+        austin /etc/skel > ls -a
+        .  ..  .bash_logout  .bashrc  examples.desktop  .profile
+    - useradd -c "Austin Burnett" -m -p "linuxacademy" -s "/bin/bash" aburnett
+    tail -n 1 /etc/passwd
+    aburnett:x:1004:1004:Austin Burnett:/home/aburnett:/bin/bash
+- passwd
+    - passwd -S user
+        - LK says that the password is locked - can't login as this user, they haven't set it yet
+        - PS means password is valid and set
+        - includes the date the password changed last
+    - passwd -l - lock the user's password (lock them out)
+    - passwd -u - unlock the user's passwd
+- usermod - update version of useradd basically
+    - ex. we have a user janniston
+      usermod -l jburnett -c "Jennifer Burnett" janniston
+- userdel <user>
+    - doesn't delete their /home directory by default: userdel -r <username>

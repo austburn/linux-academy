@@ -1,0 +1,11 @@
+Groups
+------
+- Let's say we have 20 users on our Linux system and groups of 5 need access to certain types of files - we can apply permissions at a group level and avoid adding file permissions five separate times
+- /etc/group - group definitions
+- /etc/gshadow - group passwords
+- groupadd <options> <groupname>
+    - similar to useradd: password, system groups, etc.
+- groupmod
+    - similar to usermod
+    - groupmod -g 1010 mygroup
+- groupdel

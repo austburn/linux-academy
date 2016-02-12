@@ -1,0 +1,34 @@
+File Permissions
+----------------
+- File permissions as provided by ls -l
+    - drwxrwxr-x. 2 user user  100 Mar   2 19:14 folder
+      -rwxrwxr-x. 2 user user 4096 Mar   2 19:14 file
+        d = directory
+        - = file
+        r = read
+        w = write
+        x = execute
+    - three sets of permissions: user, group, other (everyone else)
+    - rwx
+      421 = 7
+    - for directories, x means that we can cd into it, while for files it means it can be executed
+    - 777 means that a file has full permissions
+    - -rw-r--r--
+       420400400 = 644
+    - chmod 644 file - adds read/write to user, read to group/others
+      chmod u+x file - adds execute permissions to the user
+      chmod o-w file - remove write permissions from others
+      chmod a+x file - all get execute permissions
+      chmod ugo+rwx file - give all permissions to user/group/others
+    - you must own the file or be the root account to change the permissions
+    - chown changes the ownership
+        chown username.groupname filename
+    - Defaults:
+        ~ touch test
+        ~ ll
+        drwxrwxr-x 9 austin austin 4096 Feb  5 14:54 linux-essentials
+        -rw-rw-r-- 1 austin austin    0 Feb 11 10:02 test
+        ~ chmod +x test
+        ~ ll
+        drwxrwxr-x 9 austin austin 4096 Feb  5 14:54 linux-essentials
+        -rwxrwxr-x 1 austin austin    0 Feb 11 10:02 test

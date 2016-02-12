@@ -1,0 +1,17 @@
+***Note:  This excercise will walk the user through creating a new group called accounting.  Then we will add our user to that accounting group.
+Step 1:  Log in to your Linux Essentials lab server and become root.
+Step 2:  Create a new group called accounting
+
+
+[root@austburn1 ~]# groupadd accounting
+
+
+Step 3:  Add the user account called richard from a previous excercise to the group accounting.
+
+
+[root@austburn1 ~]# usermod -G accounting richard
+[root@austburn1 ~]# groups richard
+richard : richard accounting
+
+
+Step 4:  Verify that the user richard was added to the group accounting.
